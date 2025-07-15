@@ -3,8 +3,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/splash_screen.dart';
 import 'screens/dashboard.dart';
 import 'screens/login_user.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(ScholarshipApp());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(ScholarshipApp());
+}
+
 
 class ScholarshipApp extends StatelessWidget {
   @override

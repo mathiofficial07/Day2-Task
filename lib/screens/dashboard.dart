@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'apply_form.dart';
+import 'application_info.dart';
 import 'welcome_screen.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -47,7 +47,6 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Filter scholarships based on search query
     final filteredScholarships = scholarships.where((item) {
       return item['title']!
           .toLowerCase()
@@ -75,7 +74,7 @@ class _DashboardPageState extends State<DashboardPage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // 🔍 Search Field
+            // 🔍 Search Bar
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               decoration: BoxDecoration(
@@ -99,7 +98,7 @@ class _DashboardPageState extends State<DashboardPage> {
             ),
             const SizedBox(height: 20),
 
-            // 🧾 Scholarship Grid
+            // 📚 Grid List
             Expanded(
               child: filteredScholarships.isEmpty
                   ? const Center(
@@ -110,8 +109,7 @@ class _DashboardPageState extends State<DashboardPage> {
               )
                   : GridView.builder(
                 itemCount: filteredScholarships.length,
-                gridDelegate:
-                const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
@@ -123,7 +121,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => ApplicationFormPage(
+                          builder: (_) => ApplicationInfoPage(
                             scholarshipName: item['title']!,
                           ),
                         ),
