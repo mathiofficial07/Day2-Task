@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "201510181281",
+    "project_id": "ghost-47367",
+    "storage_bucket": "ghost-47367.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201510181281:android:515ac964e1122bc6ebd3e0",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuATxaL3SuV_tjMlBTgPiptmbGBxOvEB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
